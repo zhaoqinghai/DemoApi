@@ -33,7 +33,7 @@ namespace DemoApi
     {
         public IServiceContainer CreateBuilder(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().AddControllersAsServices();
             var container = services.ToServiceContainer();
             container.AddType<IBirdService, Duck>();
             return container;
